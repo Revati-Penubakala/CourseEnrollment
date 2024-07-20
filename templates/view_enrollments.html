@@ -1,0 +1,76 @@
+{% include "student_head.html" %}
+
+<div class="mt-100">
+    <div class="h3 text-center">View Enrollments</div>
+</div>
+<div class="row mt-50">
+    {% for enrollment in enrollments %}
+        {% set section = get_section_by_section_id(enrollment[3]) %}
+        {% set course = get_course_by_course_id2(section[10]) %}
+        {% set professor = get_section_by_professor_id(section[11]) %}
+    <div class="card mt-30 p-20 ml-30 box-shadow">
+        <div class="">
+            <div class="flex">
+                <div class="card-label">Enrollments Id:</div>
+                 <div class="ml-10">{{enrollment[0]}}</div>
+            </div>
+            <div class="flex">
+                <div class="card-label">Crn:</div>
+                 <div class="ml-10">{{section[1]}}</div>
+            </div>
+            <div class="flex">
+                <div class="card-label">Course Name:</div>
+                 <div class="ml-10">{{course[1]}}</div>
+            </div>
+            <div class="flex">
+                <div class="card-label">Professor Name:</div>
+                 <div class="ml-10">{{professor[1]}}</div>
+            </div>
+            <div class="flex">
+                <div class="card-label">Class Start Date:</div>
+                 <div class="ml-10">{{section[2].strftime("%Y-%m-%d")}}</div>
+            </div>
+            <div class="flex">
+                <div class="card-label">Class End Date:</div>
+                 <div class="ml-10">{{section[3].strftime("%Y-%m-%d")}}</div>
+            </div>
+            <div class="flex">
+                <div class="card-label">Room Number:</div>
+                 <div class="ml-10">{{section[4]}}</div>
+            </div>
+            <div class="flex">
+                <div class="card-label">Day:</div>
+                 <div class="ml-10">{{section[5]}}</div>
+            </div>
+            <div class="flex">
+                <div class="card-label">Start Time:</div>
+                 <div class="ml-10">{{section[6]}}</div>
+            </div>
+            <div class="flex">
+                <div class="card-label">End Time:</div>
+                 <div class="ml-10">{{section[7]}}</div>
+            </div>
+            <div class="flex">
+                <div class="card-label">Number Of Credits:</div>
+                 <div class="ml-10">{{section[9]}}</div>
+            </div>
+            <div class="flex">
+                <div class="card-label">Status:</div>
+                 <div class="ml-10 bold-txt">{{enrollment[2]}}</div>
+            </div>
+            {% if enrollment[2] == 'Assigned Grade' %}
+            <div class="flex">
+                <div class="card-label grade">Grade:</div>
+                 <div class="ml-10 grade">{{enrollment[1]}}</div>
+            </div>
+            {% endif %}
+            {% if session['role']== "student" %}
+            <div class="mt-30">
+                <div><a href="view_course_material?section_id={{section[0]}}" class="btn txt-none">View Course Material</a></div>
+            </div>
+            {% endif %}
+
+        </div>
+    </div>
+    {% endfor %}
+</div>

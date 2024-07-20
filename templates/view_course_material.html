@@ -1,0 +1,30 @@
+{% if session['role']=="professor" %}
+       {% include "professor_head.html" %}
+{% endif %}
+{% if session['role']=="student" %}
+       {% include "student_head.html" %}
+{% endif %}
+
+<div class="mt-100">
+    <div class="h3 text-center">View Course Materials</div>
+</div>
+<div class="row mt-50">
+    {% for course_material in course_materials %}
+    <div class="card mt-30 p-20 ml-30 box-shadow">
+        <div class="">
+            <div class="flex">
+                <div class="card-label">Course Material Name:</div>
+                 <div class="ml-10">{{course_material[1]}}</div>
+            </div>
+            <div class="flex">
+                <div class="card-label">Course Material PDF:</div>
+                <div><a href="../static/course_materials/{{course_material[2]}}">{{course_material[2]}}</a></div>
+            </div>
+            <div class="flex">
+                <div class="card-label">Description:</div>
+                 <div class="ml-10">{{course_material[3]}}</div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>

@@ -1,0 +1,82 @@
+{% include "admin_head.html" %}
+
+<div class="row mt-100 space-around">
+    <div class="w-30">
+        <div class="card p-20 border-radius box-shadow">
+            <form action="add_section_action" , method="post">
+                <div class="h3 text-center">
+                    <div>Add Section</div>
+                </div>
+                <div class="mt-20">
+                    <label for="crn">CRN:</label>
+                    <input type="text" id="crn" name="crn" class="form-input" placeholder="Enter CRN" required>
+                </div>
+                <div class="mt-20">
+                    <label>Choose Course:</label>
+                    <select class="form-input" name="course_id" required>
+                        <option value="">Choose Course</option>
+                        {% for course in courses %}
+                        <option value="{{course[0]}}">
+                            {{course[1]}}
+                        </option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="mt-20">
+                    <label>Choose Professor</label>
+                    <select class="form-input" name="professor_id" required>
+                        <option>Choose Professor</option>
+                        {% for professor in professors %}
+                        <option value="{{professor[0]}}">
+                            {{professor[1]}}
+                        </option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="mt-20">
+                    <label for="class_start_date">Class Start Date:</label>
+                    <input type="date" id="class_start_date" name="class_start_date" class="form-input" required>
+                </div>
+                <div class="mt-20">
+                    <label for="class_end_date">Class End Date:</label>
+                    <input type="date" id="class_end_date" name="class_end_date" class="form-input" required>
+                </div>
+                <div class="mt-20">
+                    <label for="room_number">Room Number:</label>
+                    <input type="number" id="room_number" name="room_number" class="form-input" placeholder="Enter Room Number" required>
+                </div>
+                <div class="mt-20">
+                        <label for="day">Choose Day:</label>
+                        <select name="day" id="day" class="form-input" required>
+                          <option value="monday">Monday</option>
+                          <option value="tuesday">Tuesday</option>
+                          <option value="wednesday">Wednesday</option>
+                          <option value="thursday">Thursday</option>
+                          <option value="friday">Friday</option>
+                        </select>
+                </div>
+                <div class="mt-20">
+                    <label for="start_time">Start Time:</label>
+                    <input type="time" id="start_time" name="start_time" class="form-input" required>
+                </div>
+                <div class="mt-20">
+                    <label for="end_time">End Time:</label>
+                    <input type="time" id="end_time" name="end_time" class="form-input"  required>
+                </div>
+                  <div class="mt-20">
+                    <label for="number_of_students">Number of Students:</label>
+                    <input type="number" id="number_of_students" name="number_of_students" class="form-input" placeholder="Enter Number of Students" required>
+                </div>
+                  <div class="mt-20">
+                    <label for="number_of_credits">Number of Credits:</label>
+                    <input type="text" id="number_of_credits" name="number_of_credits" class="form-input" placeholder="Enter Number of Credits" required>
+                </div>
+                <div class="mt-10">
+                    <input type="submit" class="btn  w-100 mt-20 " value="Add Section">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+

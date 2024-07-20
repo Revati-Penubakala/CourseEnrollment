@@ -1,0 +1,26 @@
+{% include "professor_head.html" %}
+
+<div class="w-30  margin-auto">
+    <div class="box-shadow p-20 mt-120">
+        <form action="course_material_action" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="section_id" value="{{section_id}}">
+            <div class="h3 text-center">Add Course Material</div>
+            <div class="mt-20">
+                <label for="course_material_name" class="">Course Material Name :</label>
+                <input type="text" name="course_material_name" id="course_material_name" class="form-input" placeholder="Please Enter Username">
+            </div>
+
+             <div class="mt-10">
+                <label for="material_pdf">Choose Material File :</label>
+                <input type="file" name="material_pdf" id="material_pdf" class="form-input">
+            </div>
+            <div class="mt-10">
+                <label for="description">Description :</label>
+                <textarea name="description" id="description" class="form-input"></textarea>
+            </div>
+            <div class="">
+                <input type="submit" class="btn w-100 mt-20 btn-primary" value="Add">
+            </div>
+        </form>
+    </div>
+</div>

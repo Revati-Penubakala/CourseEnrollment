@@ -1,0 +1,231 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.row{
+    display: flex;
+    flex-wrap:wrap;
+}
+.space-between{
+    justify-content: space-between;
+}
+.space-around{
+    justify-content: space-around;
+}
+
+.card{
+    border:1px solid blue ;
+}
+.card-label{
+    font-weight: 100;
+}
+.box-shadow{
+    box-shadow: 0 0 20px #A1D6E2;
+}
+
+
+.bs{
+    border-left: 1px solid ref;
+}
+.be{
+    border-right:1px solid ref;
+}
+.bt{
+    border-top: 1px solid ref;
+}
+.bb{
+    border-bottom:1px solid ref;
+}
+
+
+.form-input{
+    width: 100%;
+    border: 1px solid lightgray;
+    font-size: 18px;
+    padding: 10px;
+}
+
+.form-label{
+    font-weight: 100;
+}
+
+.border-radius{
+    border-radius: 14px;
+}
+
+.h1{
+   font-weight: bold;
+   font: 18px;
+}
+.h2{
+    font-weight: bold;
+    font: 20px;
+}
+.h3{
+    font-weight: bold;
+    font-size: 30px;
+ }
+
+
+.bold-txt{
+    font-weight: bold;
+    color:green;
+}
+
+.primary{
+    color: #1995AD;
+}
+
+.secondary{
+    color: #A1D6E2;
+}
+.danger{
+color:red;
+}
+
+
+.btn{
+    width: 100%;
+    border: 1px solid lightgray;
+    font-size: 1.2rem;
+    padding: 10px;
+    background-color: #A1D6E2;
+    color:white;
+    font-weight:bold;
+    display:block;
+}
+.btn:hover{
+    background:  #1995AD;
+    border-radius: 14px;
+
+}
+
+
+.btn-primary{
+    background-color: white;
+    color:aquamarine;
+}
+.btn-secondary{
+    background-color: white;
+    color:green;
+}
+.btn-danger{
+    background-color: red;
+    color:white;
+}
+
+
+
+.text-center{
+   text-align:center;
+}
+.text-primary{
+    color:white;
+}
+.txt-none{
+   text-decoration:none;
+}
+
+
+.margin-auto{
+    margin:auto;
+}
+
+.logo-img{
+    width: 80px;
+}
+
+.box-shadow{
+    box-shadow:0, 0 10px red;
+}
+
+
+
+.nav{
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 90px;
+    padding: 10px 100px;
+    backdrop-filter: blur(8px) brightness(1);
+    background-color: #A1D6E2;
+    justify-content: space-between;
+    display: flex;
+}
+
+.nav-item{
+    display: flex;
+    gap: 50px;
+}
+.nav-menu-item{
+    text-decoration: none;
+    font-weight:bold;
+    padding: 10px;
+    color: black;
+}
+.nav-menu-item:hover{
+    background:  #1995AD;
+    border-radius: 10px;
+
+}
+
+.welcome-text{
+    color: #A1D6E2;
+    font-size:60;
+    margin-top: 200px;
+    text-align: center;
+}
+
+.container{
+    background-image: url("https://img.freepik.com/free-photo/entrepreneurs-meeting-office_23-2148898688.jpg?ga=GA1.1.1312216658.1718106846&semt=ais_user");
+    min-height: 100vh;
+    background-size: 100%;
+    background-position: center;
+    overflow: auto;
+}
+.container1{
+    background-image: url("https://img.freepik.com/free-photo/portrait-young-male-professor-education-day_23-2150980043.jpg");
+    min-height: 100vh;
+    background-size: 80%;
+    background-position: center;
+    overflow: auto;
+}
+.container2{
+    background-image: url("https://img.freepik.com/free-photo/brainstorm-meeting_1098-15871.jpg?w=996&t=st=1720672869~exp=1720673469~hmac=6180e6a848611c421fdaa323ac5324a63f50fd4637492dfaacb5e007fe35ed88");
+    min-height: 100vh;
+    background-size: 100%;
+    background-position: center;
+    overflow: auto;
+}
+
+
+.table, th, td {
+  border:1px solid blue;
+  text-align:center;
+}
+.table{
+border-collapse:collapse;
+}
+td,th{
+padding:5px;
+}
+
+.flex{
+   display:flex;
+}
+
+
+.grade{
+color:green;
+font-size: 30px;
+}
+
+.display-block{
+display:block;
+}
+.gap{
+gap:10px;
+}

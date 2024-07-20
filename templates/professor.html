@@ -1,0 +1,124 @@
+{% include "admin_head.html" %}
+
+<script>
+        function validateForm() {
+            var password = document.getElementById("password").value;
+            var message = "";
+
+            // Check password length
+            if (password.length < 8) {
+                message += "Password must be at least 8 characters long.\n";
+            }
+
+            // Check for uppercase letter
+            if (!/[A-Z]/.test(password)) {
+                message += "Password must contain at least one uppercase letter.\n";
+            }
+
+            // Check for lowercase letter
+            if (!/[a-z]/.test(password)) {
+                message += "Password must contain at least one lowercase letter.\n";
+            }
+
+            // Check for number
+            if (!/[0-9]/.test(password)) {
+                message += "Password must contain at least one number.\n";
+            }
+
+            // Check for special character
+            if (!/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
+                message += "Password must contain at least one special character.\n";
+            }
+
+            if (message) {
+                alert(message);
+                return false;
+            } else {
+                alert("Professor Added Successfully");
+                return true;
+            }
+        }
+    </script>
+
+<div class="row mt-100 space-around ">
+    <div class="w-30">
+        <div class="card p-10 border-radius box-shadow">
+            <form action="add_professor_action" , method="post" onsubmit="return validateForm()">
+                <div class="h3 text-center">
+                    <div>Add Professor</div>
+                </div>
+                <div class="mt-20">
+                    <label for="first_name">First Name:</label>
+                    <input type="text" id="first_name" name="first_name" class="form-input" placeholder="Enter First Name" required>
+                </div>
+                <div class="mt-10">
+                    <label for="last_name">Last Name:</label>
+                    <input type="text" id="last_name" name="last_name" class="form-input" placeholder="Enter Last Name" required>
+                </div>
+                <div class="mt-10">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" class="form-input" placeholder="Enter Email" required>
+                </div>
+                <div class="mt-10">
+                    <label for="phone">Phone:</label>
+                    <input type="tel" id="phone" name="phone" class="form-input" placeholder="Enter Phone" required>
+                </div>
+                <div class="mt-10">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" class="form-input" placeholder="Enter Password" required>
+                </div>
+                <div class="mt-10">
+                    <label for="designation">Designation:</label>
+                    <input type="text" id="designation" name="designation" class="form-input" placeholder="Enter Designation" required>
+                </div>
+                <div class="mt-10">
+                    <input type="submit" class="btn  w-100 mt-20" value="Submit">
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="w-60">
+        <div class="card border-radius box-shadow p-20">
+            <div class="h3 text-center">View Professors</div>
+              <div class="ml-60p">
+                <form action="/professor">
+                    <div class="flex">
+                        <div class="mt-20">
+                            <input type="search" placeholder="Search.." name="keyword"  id= "keyword" class="form-input">
+                        </div>
+                        <div>
+                            <input type="submit" class="btn w-100 mt-20" value="Submit">
+                        </div>
+                    </div>
+                </form>
+              </div>
+            <div class="mt-20">
+                <table class="w-100 table">
+                    <thead>
+                        <tr>
+                            <th>Professor Id</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Designation</th>
+                        </tr>
+                    </thead>
+                     <tbody>
+                     {%  for professor in professors %}
+                         <tr>
+                             <td>{{professor[0]}}</td>
+                             <td>{{professor[1]}}</td>
+                             <td>{{professor[2]}}</td>
+                             <td>{{professor[3]}}</td>
+                             <td>{{professor[4]}}</td>
+                             <td>{{professor[6]}}</td>
+                         </tr>
+                     {% endfor %}
+                     </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>
