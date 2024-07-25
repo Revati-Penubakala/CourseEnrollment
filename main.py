@@ -4,7 +4,7 @@ import os
 import pymysql
 from flask import Flask, render_template, session, request, redirect
 
-conn = pymysql.connect(host="localhost", user="root", password="root", db="student_course_enrollment")
+conn = pymysql.connect(host="localhost", user="root", password="root123@", db="student_course_enrollment")
 cursor = conn.cursor()
 
 APP_ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -62,7 +62,6 @@ def logout():
 @app.route("/professor")
 def professor():
     keyword = request.args.get("keyword")
-    print(keyword)
     if keyword == None:
         keyword =""
     if keyword == "":
@@ -96,7 +95,6 @@ def add_professor_action():
 @app.route("/student")
 def student():
     keyword = request.args.get("keyword")
-    print(keyword)
     if keyword == None:
         keyword = ""
     if keyword == "":
@@ -492,5 +490,5 @@ def get_is_enrollment_expired(section_id,class_start_date):
     else:
         return False
 
-app.run(debug=True)
+app.run(debug=True,port=80,host="0.0.0.0")
 
